@@ -7,9 +7,9 @@ try:
         pass
         connection.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         with connection.cursor() as cursor:
-            cursor.execute('SELECT version();')
-            record = cursor.fetchone()
-            print(f'Connection is established with {record}')
+            cursor.execute('SELECT * FROM users;')
+            record = cursor.fetchall()
+            print(f'Result: {record}')
 
 except (Exception, Error) as error:
     print(f'ERROR during PostgreSQL transaction {error}')
