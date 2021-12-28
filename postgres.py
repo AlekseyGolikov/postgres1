@@ -6,7 +6,7 @@ try:
     with psycopg2.connect(user='postgres', password='12345', host='localhost', port='5432', database='test') as connection:
         connection.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         with connection.cursor() as cursor:
-            insert_query = """INSERT INTO books (nick_name,author,num_lists,year) VALUES ('aaa','bbb',100,2021);"""
+            insert_query = """INSERT INTO books (nick_name,author,num_lists,year) VALUES ('name2','author2',220,2021);"""
             cursor.execute(insert_query)
             connection.commit()
             print('Note is done successfully!')
